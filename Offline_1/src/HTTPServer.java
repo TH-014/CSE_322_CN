@@ -44,6 +44,7 @@ public class HTTPServer {
                  OutputStream fileOut = socket.getOutputStream()) {
 
                 String requestLine = in.readLine();
+//                System.out.println(requestLine);
                 if (requestLine == null) {
                     sendErrorResponse(out, "400 Bad Request", "Invalid HTTP request");
                     return;
@@ -51,12 +52,11 @@ public class HTTPServer {
 
                 String[] reqSegments = requestLine.split(" ");
                 if (reqSegments[0].equals("GET")) {
-//                    System.out.println(requestLine);
                     handleGetRequest(reqSegments, out, fileOut);
                 } else if (reqSegments[0].equals("UPLOAD")) {
                     handleUploadRequest(reqSegments, in);
                 } else {
-                    out.println("HTTP/1.0 400 Bad Request");
+                    sendErrorResponse(out, "400 Bad Request", "Invalid HTTP request");
                 }
 
         } catch (IOException e) {
