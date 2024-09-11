@@ -44,13 +44,50 @@ public class HTTPServer {
                  OutputStream fileOut = socket.getOutputStream()) {
 
                 String requestLine = in.readLine();
-                if (requestLine == null || (!requestLine.startsWith("GET") && !requestLine.startsWith("UPLOAD"))) {
-                    //send error response
+                if (requestLine == null) {
+                    sendErrorResponse(out, "400 Bad Request", "Invalid HTTP request");
                     return;
                 }
+
+                String[] reqSegments = requestLine.split(" ");
+                if (reqSegments[0].equals("GET")) {
+//                    System.out.println(requestLine);
+                    handleGetRequest(reqSegments, out, fileOut);
+                } else if (reqSegments[0].equals("UPLOAD")) {
+                    handleUploadRequest(reqSegments, in);
+                } else {
+                    out.println("HTTP/1.0 400 Bad Request");
+                }
+
         } catch (IOException e) {
                 e.printStackTrace();
             }
+            finally {
+                try {
+                    socket.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+
+        private void sendErrorResponse(PrintWriter out, String status, String message)
+        {
+            System.out.println("Error: " + status);
+            out.println("HTTP/1.0 " + status);
+            out.println("Content-Type: text/html");
+            out.println();
+            out.println("<html><head><title>ERROR</title></head><body><h1>" + message + "</h1></body></html>");
+        }
+
+        private void handleGetRequest(String[] reqSegments, PrintWriter out, OutputStream fileOut)
+        {
+
+        }
+
+        private void handleUploadRequest(String[] reqSegments, BufferedReader in)
+        {
+
         }
 
     }
