@@ -12,7 +12,8 @@ public class HTTPServer {
     private static final String UPD_DIR = "uploaded";
     private static final int CHUNK_SIZE = 4096;
     private static final String ROOT_DIR = "ROOT";
-    private static final String LOG_FILE = "log.txt";;
+    private static final String LOG_FILE = "log.txt";
+    private static final Set<String> ALLOWED_EXTENSIONS = Set.of("txt", "jpg", "png", "mp4");
 
     public static void main(String[] args) {
 
@@ -190,7 +191,12 @@ public class HTTPServer {
 
         private void handleUploadRequest(String[] reqSegments, BufferedReader in) throws FileNotFoundException {
             String fileName = reqSegments[1];
-            File file = new File(ROOT_DIR + "/uploaded/" + fileName);
+            if (!isAllowedFile(fileName)) {
+                Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "403: Forbidden");
+                System.out.println("ERROR! 403: Forbidden\n"+"File name: "+fileName+"\t\"File type not allowed\"");
+                return;
+            }
+            File file = new File(ROOT_DIR + "/"+UPD_DIR+"/" + fileName);
 
             try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file))) {
                 char[] buffer = new char[CHUNK_SIZE];
@@ -202,7 +208,21 @@ public class HTTPServer {
                 e.printStackTrace();
             }
 
+            Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "File uploaded!");
             System.out.println("File uploaded: " + file.getName());
+        }
+
+        private static boolean isAllowedFile(String fileName) {
+            String fileExtension = getFileExtension(fileName).toLowerCase();
+            return ALLOWED_EXTENSIONS.contains(fileExtension);
+        }
+
+        private static String getFileExtension(String fileName) {
+            int lastDotIndex = fileName.lastIndexOf('.');
+            if (lastDotIndex > 0 && lastDotIndex < fileName.length() - 1) {
+                return fileName.substring(lastDotIndex + 1);
+            }
+            return "";
         }
 
     }
