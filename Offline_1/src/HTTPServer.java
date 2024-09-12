@@ -68,26 +68,26 @@ public class HTTPServer {
 
         @Override
         public void run() {
-            try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            try (BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+                 PrintWriter pw = new PrintWriter(socket.getOutputStream(), true);
                  OutputStream fileOut = socket.getOutputStream()) {
 
-                String requestLine = in.readLine();
+                String requestLine = br.readLine();
                 System.out.println(requestLine);
                 if (requestLine == null) {
                     Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
-                    sendErrorResponse(out, "400: Bad Request", "Invalid HTTP request");
+                    sendErrorResponse(pw, "400: Bad Request", "Invalid HTTP request");
                     return;
                 }
 
                 String[] reqSegments = requestLine.split(" ");
                 if (reqSegments[0].equals("GET")) {
-                    handleGetRequest(reqSegments, out, fileOut);
+                    handleGetRequest(reqSegments, pw, fileOut);
                 } else if (reqSegments[0].equals("UPLOAD")) {
-                    handleUploadRequest(reqSegments, in);
+                    handleUploadRequest(reqSegments, br);
                 } else {
                     Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
-                    sendErrorResponse(out, "400: Bad Request", "Invalid HTTP request");
+                    sendErrorResponse(pw, "400: Bad Request", "Invalid HTTP request");
                 }
 
             } catch (IOException e) {
@@ -102,19 +102,19 @@ public class HTTPServer {
             }
         }
 
-        private void sendErrorResponse(PrintWriter out, String status, String message)
+        private void sendErrorResponse(PrintWriter pw, String status, String message)
         {
             System.out.println("Error: " + status);
-            out.println("HTTP/1.0 " + status);
-            out.println("Content-Type: text/html");
-            out.println();
-            out.println("<html><head><title>ERROR!</title></head><body><h1>" + message + "</h1></body></html>");
+            pw.println("HTTP/1.0 " + status);
+            pw.println("Content-Type: text/html");
+            pw.println();
+            pw.println("<html><head><title>ERROR!</title></head><body><h1>" + message + "</h1></body></html>");
         }
 
-        private void handleGetRequest(String[] reqSegments, PrintWriter out, OutputStream fileOut) throws IOException {
+        private void handleGetRequest(String[] reqSegments, PrintWriter pw, OutputStream fileOut) throws IOException {
             if (reqSegments.length != 3) {
                 Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "400: Bad Request");
-                sendErrorResponse(out, "400: Bad Request", "Invalid HTTP request format");
+                sendErrorResponse(pw, "400: Bad Request", "Invalid HTTP request format");
                 return;
             }
             String filePath = reqSegments[1];
@@ -125,34 +125,34 @@ public class HTTPServer {
             Path path = Paths.get(filePath);
             if (Files.exists(path)) {
                 if (Files.isDirectory(path)) {
-                    sendDirectoryResponse(out, path);
+                    sendDirectoryResponse(pw, path);
                 } else {
-                    sendFileResponse(out, path, fileOut);
+                    sendFileResponse(pw, path, fileOut);
                 }
             } else {
                 Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "404: Not Found");
-                sendErrorResponse(out, "404: Not Found", "File not found");
+                sendErrorResponse(pw, "404: Not Found", "File not found");
             }
             Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), Files.exists(path) ? "200 OK" : "404 Not Found");
         }
 
-        private void sendFileResponse(PrintWriter out, Path file, OutputStream fileOut) throws IOException {
-            String mimeType = Files.probeContentType(file);
+        private void sendFileResponse(PrintWriter pw, Path path, OutputStream fileOut) throws IOException {
+            String mimeType = Files.probeContentType(path);
             if (mimeType == null) {
                 mimeType = "application/octet-stream";
             }
             String [] mime = mimeType.split("/");
 //            System.out.println(mime[0]);
 
-            out.println("HTTP/1.0 200 OK");
-            out.println("Content-Type: " + mimeType);
-            out.println("Content-Length: " + Files.size(file));
+            pw.println("HTTP/1.0 200 OK");
+            pw.println("Content-Type: " + mimeType);
+            pw.println("Content-Length: " + Files.size(path));
             if(!mime[0].equals("image") && !mime[0].equals("text")) {
-                out.println("Content-Disposition: attachment; filename=\"" + file.getFileName().toString() + "\"");
+                pw.println("Content-Disposition: attachment; filename=\"" + path.getFileName().toString() + "\"");
             }
-            out.println();
+            pw.println();
 
-            try (FileInputStream fis = new FileInputStream(file.toFile())) {
+            try (FileInputStream fis = new FileInputStream(path.toFile())) {
                 byte[] buffer = new byte[CHUNK_SIZE];
                 int bytesRead;
                 while ((bytesRead = fis.read(buffer)) != -1) {
@@ -189,7 +189,7 @@ public class HTTPServer {
             out.println("</body></html>");
         }
 
-        private void handleUploadRequest(String[] reqSegments, BufferedReader in) throws FileNotFoundException {
+        private void handleUploadRequest(String[] reqSegments, BufferedReader br) throws FileNotFoundException {
             String fileName = reqSegments[1];
             if (!isAllowedFile(fileName)) {
                 Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "403: Forbidden");
@@ -201,7 +201,7 @@ public class HTTPServer {
             try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file))) {
                 char[] buffer = new char[CHUNK_SIZE];
                 int bytesRead;
-                while ((bytesRead = in.read(buffer)) != -1) {
+                while ((bytesRead = br.read(buffer)) != -1) {
                     bos.write(new String(buffer, 0, bytesRead).getBytes());
                 }
             } catch (IOException e) {

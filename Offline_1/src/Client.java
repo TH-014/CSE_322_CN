@@ -1,5 +1,8 @@
 import java.io.*;
 import java.net.Socket;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.Vector;
@@ -13,8 +16,8 @@ public class Client {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Vector<Thread> threads = new Vector<>();
+        System.out.print("Enter the file name to upload (or type 'exit' to quit): ");
         while (true) {
-            System.out.print("Enter the file name to upload (or type 'exit' to quit): ");
             String fileName = scanner.nextLine();
 
             if (fileName.equalsIgnoreCase("exit")) {
@@ -39,7 +42,7 @@ public class Client {
     }
 
     private static class FileUploader implements Runnable {
-        private final String fileName;
+        private String fileName;
 
         public FileUploader(String fileName) {
             this.fileName = fileName;
@@ -48,27 +51,29 @@ public class Client {
         @Override
         public void run() {
             try {
-                Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
-                System.out.println("Connected to server");
-
-                File file = new File(fileName);
-                if (!file.exists() || !file.isFile()) {
-                    System.out.println("Invalid file.");
-                    socket.close();
-                    return;
+                if(fileName.startsWith("/"))
+                    fileName = fileName.substring(1);
+                Path path = Paths.get(fileName);
+                if (Files.exists(path)) {
+                    if (Files.isDirectory(path)) {
+                        System.out.println("Can't upload a directory.");
+                        return;
+                    }
                 }
 
+                Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
+//                System.out.println("Connected to server");
                 PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
                 String [] parts = fileName.split("/");
                 out.println("UPLOAD " + parts[parts.length - 1]);
 
-                if(!isAllowedFile(file.getName())) {
+                if(!isAllowedFile(fileName)) {
                     System.out.println("ERROR! File type not allowed.");
                     socket.close();
                     return;
                 }
 
-                BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));
+                BufferedInputStream bis = new BufferedInputStream(new FileInputStream(path.toFile()));
                 BufferedOutputStream bos = new BufferedOutputStream(socket.getOutputStream());
 
                 byte[] buffer = new byte[CHUNK_SIZE];
@@ -80,7 +85,7 @@ public class Client {
                 bis.close();
                 bos.close();
                 socket.close();
-                System.out.println("File uploaded successfully.");
+                System.out.println(fileName + " uploaded successfully.");
 
             } catch (Exception e) {
                 e.printStackTrace();
