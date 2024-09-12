@@ -1,356 +1,192 @@
-Date: Thu Sep 12 19:44:21 BDT 2024
+Date: Thu Sep 12 21:39:56 BDT 2024
 Request: [GET, /, HTTP/1.1]
 Response: 200 OK
 
-Date: Thu Sep 12 19:44:21 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:39:58 BDT 2024
+Request: [GET, /ROOT/Screenshot%20from%202024-09-12%2021-29-31.png, HTTP/1.1]
 Response: 404: Not Found
 
-Date: Thu Sep 12 19:44:21 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:39:58 BDT 2024
+Request: [GET, /ROOT/Screenshot%20from%202024-09-12%2021-29-31.png, HTTP/1.1]
 Response: 404 Not Found
 
-Date: Thu Sep 12 19:44:24 BDT 2024
-Request: [GET, /ROOT/dir1, HTTP/1.1]
-Response: 200 OK
+Date: Thu Sep 12 21:40:18 BDT 2024
+Request: null
+Response: 400: Bad Request
 
-Date: Thu Sep 12 19:44:24 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 19:44:24 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 19:44:26 BDT 2024
-Request: [GET, /ROOT/dir1/file2.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 19:44:26 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 19:44:26 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 19:44:30 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 19:44:30 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 19:44:35 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 19:44:35 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 19:44:35 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:02:35 BDT 2024
+Date: Thu Sep 12 21:40:53 BDT 2024
 Request: [GET, /, HTTP/1.1]
 Response: 200 OK
 
-Date: Thu Sep 12 21:02:35 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:02:35 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:02:38 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Date: Thu Sep 12 21:40:56 BDT 2024
+Request: [GET, /ROOT/Screenshot_from_2024-09-12_21-29-31.png, HTTP/1.1]
 Response: 200 OK
 
-Date: Thu Sep 12 21:02:38 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:02:38 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:02:39 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:02:39 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:02:40 BDT 2024
-Request: [GET, /ROOT/dir1, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:02:40 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:02:40 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:02:41 BDT 2024
-Request: [GET, /ROOT/dir1/file2.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:02:41 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:02:41 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:02:45 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:02:45 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:05:50 BDT 2024
-Request: [UPLOAD, up1.txt]
-Response: File uploaded!
-
-Date: Thu Sep 12 21:06:30 BDT 2024
-Request: [UPLOAD, log.txt]
-Response: File uploaded!
-
-Date: Thu Sep 12 21:06:47 BDT 2024
+Date: Thu Sep 12 21:41:07 BDT 2024
 Request: null
 Response: 400: Bad Request
 
-Date: Thu Sep 12 21:07:00 BDT 2024
-Request: [UPLOAD, Assignment_1.pdf]
-Response: 403: Forbidden
+Date: Thu Sep 12 21:47:35 BDT 2024
+Request: [GET, /Screenshot%20from_2024-09-12_21-29-31.png, HTTP/1.1]
+Response: 404: Not Found
 
-Date: Thu Sep 12 21:07:24 BDT 2024
+Date: Thu Sep 12 21:47:35 BDT 2024
+Request: [GET, /Screenshot%20from_2024-09-12_21-29-31.png, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Thu Sep 12 21:47:43 BDT 2024
+Request: [GET, /Screenshot%20from_2024-09-12_21-29-31.png, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Thu Sep 12 21:47:43 BDT 2024
+Request: [GET, /Screenshot%20from_2024-09-12_21-29-31.png, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Thu Sep 12 21:50:23 BDT 2024
 Request: null
 Response: 400: Bad Request
 
-Date: Thu Sep 12 21:07:36 BDT 2024
-Request: null
-Response: 400: Bad Request
-
-Date: Thu Sep 12 21:07:52 BDT 2024
-Request: null
-Response: 400: Bad Request
-
-Date: Thu Sep 12 21:08:14 BDT 2024
-Request: null
-Response: 400: Bad Request
-
-Date: Thu Sep 12 21:08:59 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:08:59 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:08:59 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:09:01 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:09:01 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:09:01 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:09:11 BDT 2024
-Request: [GET, /ROOT/uploaded/up1.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:09:11 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:09:11 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:09:15 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:09:15 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:21:57 BDT 2024
+Date: Thu Sep 12 21:50:36 BDT 2024
 Request: [GET, /, HTTP/1.1]
 Response: 200 OK
 
-Date: Thu Sep 12 21:21:57 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:21:57 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:21:58 BDT 2024
+Date: Thu Sep 12 21:50:38 BDT 2024
 Request: [GET, /ROOT/uploaded, HTTP/1.1]
 Response: 200 OK
 
-Date: Thu Sep 12 21:21:58 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:21:58 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:22:00 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
+Date: Thu Sep 12 21:50:41 BDT 2024
+Request: [GET, /ROOT/Screenshot%20from_2024-09-12_21-29-31.png, HTTP/1.1]
 Response: 200 OK
 
-Date: Thu Sep 12 21:22:00 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:50:49 BDT 2024
+Request: null
+Response: 400: Bad Request
+
+Date: Thu Sep 12 21:52:26 BDT 2024
+Request: null
+Response: 400: Bad Request
+
+Date: Thu Sep 12 21:52:28 BDT 2024
+Request: [GET, /file.txt, HTTP/1.1]
 Response: 404: Not Found
 
-Date: Thu Sep 12 21:22:00 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:52:28 BDT 2024
+Request: [GET, /file.txt, HTTP/1.1]
 Response: 404 Not Found
 
-Date: Thu Sep 12 21:22:33 BDT 2024
-Request: [UPLOAD, Offline_1.iml]
-Response: 403: Forbidden
-
-Date: Thu Sep 12 21:22:52 BDT 2024
-Request: [UPLOAD, up1.txt]
-Response: File uploaded!
-
-Date: Thu Sep 12 21:23:07 BDT 2024
-Request: [UPLOAD, Main.java]
-Response: 403: Forbidden
-
-Date: Thu Sep 12 21:23:36 BDT 2024
-Request: [UPLOAD, file1.txt]
-Response: File uploaded!
-
-Date: Thu Sep 12 21:23:51 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404: Not Found
-
-Date: Thu Sep 12 21:23:51 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 404 Not Found
-
-Date: Thu Sep 12 21:23:52 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Date: Thu Sep 12 21:52:29 BDT 2024
+Request: [GET, /ROOT/Screenshot%20from_2024-09-12_21-29-31.png, HTTP/1.1]
 Response: 200 OK
 
-Date: Thu Sep 12 21:23:52 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:52:43 BDT 2024
+Request: [GET, /dir3, HTTP/1.1]
 Response: 404: Not Found
 
-Date: Thu Sep 12 21:23:52 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:52:43 BDT 2024
+Request: [GET, /dir3, HTTP/1.1]
 Response: 404 Not Found
 
-Date: Thu Sep 12 21:23:54 BDT 2024
-Request: [GET, /ROOT/uploaded/file1.txt, HTTP/1.1]
-Response: 200 OK
+Date: Thu Sep 12 21:52:52 BDT 2024
+Request: null
+Response: 400: Bad Request
 
-Date: Thu Sep 12 21:23:54 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:57:12 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
 Response: 404: Not Found
 
-Date: Thu Sep 12 21:23:54 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:57:12 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
 Response: 404 Not Found
 
-Date: Thu Sep 12 21:23:59 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:23:59 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:57:54 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
 Response: 404: Not Found
 
-Date: Thu Sep 12 21:23:59 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:57:54 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
 Response: 404 Not Found
 
-Date: Thu Sep 12 21:24:11 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:58:19 BDT 2024
+Request: [GET, /installHook.js.map, HTTP/1.1]
 Response: 404: Not Found
 
-Date: Thu Sep 12 21:24:11 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 21:58:19 BDT 2024
+Request: [GET, /installHook.js.map, HTTP/1.1]
 Response: 404 Not Found
 
-Date: Thu Sep 12 21:24:24 BDT 2024
-Request: [UPLOAD, log.txt]
-Response: File uploaded!
-
-Date: Thu Sep 12 21:24:46 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:24:46 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 22:02:04 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
 Response: 404: Not Found
 
-Date: Thu Sep 12 21:24:46 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 22:02:04 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
 Response: 404 Not Found
 
-Date: Thu Sep 12 21:24:47 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:24:47 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 22:03:28 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
 Response: 404: Not Found
 
-Date: Thu Sep 12 21:24:47 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
+Date: Thu Sep 12 22:03:28 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
 Response: 404 Not Found
 
-Date: Thu Sep 12 21:31:39 BDT 2024
+Date: Thu Sep 12 22:04:41 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Thu Sep 12 22:04:41 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Thu Sep 12 22:04:57 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Thu Sep 12 22:04:57 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Thu Sep 12 22:05:39 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Thu Sep 12 22:05:39 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Thu Sep 12 22:06:03 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Thu Sep 12 22:06:03 BDT 2024
+Request: [GET, /abc, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Thu Sep 12 22:06:22 BDT 2024
 Request: [GET, /, HTTP/1.1]
 Response: 200 OK
 
-Date: Thu Sep 12 21:31:39 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:32:12 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:32:13 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:36:33 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:36:34 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Thu Sep 12 21:36:39 BDT 2024
+Date: Thu Sep 12 22:06:28 BDT 2024
 Request: [GET, /ROOT/file1.txt, HTTP/1.1]
 Response: 200 OK
+
+Date: Thu Sep 12 22:06:31 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 22:06:34 BDT 2024
+Request: [GET, /ROOT/dir1, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 22:06:39 BDT 2024
+Request: [GET, /ROOT/Screenshot%20from_2024-09-12_21-29-31.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 22:06:43 BDT 2024
+Request: [GET, /ROOT/doc1.docx, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 22:06:48 BDT 2024
+Request: null
+Response: 400: Bad Request
 

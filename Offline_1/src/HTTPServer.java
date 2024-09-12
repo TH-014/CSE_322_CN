@@ -76,7 +76,7 @@ public class HTTPServer {
                 System.out.println(requestLine);
                 if (requestLine == null) {
                     Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
-                    sendErrorResponse(pw, "400: Bad Request", "Invalid HTTP request");
+                    sendErrorResponse(pw, "400 Bad Request", "Invalid HTTP request");
                     return;
                 }
 
@@ -87,7 +87,7 @@ public class HTTPServer {
                     handleUploadRequest(reqSegments, br);
                 } else {
                     Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
-                    sendErrorResponse(pw, "400: Bad Request", "Invalid HTTP request");
+                    sendErrorResponse(pw, "400 Bad Request", "Invalid HTTP request");
                 }
 
             } catch (IOException e) {
@@ -104,17 +104,20 @@ public class HTTPServer {
 
         private void sendErrorResponse(PrintWriter pw, String status, String message)
         {
+            String content = "<!DOCTYPE HTML><html><head><title>ERROR!</title></head><body><h1>" + "ERROR " + status.substring(0, 3) + "!<hr/>" + message + "</h1></body></html>";
             System.out.println("Error: " + status);
-            pw.println("HTTP/1.0 " + status);
+            pw.println("HTTP/1.1 " + status);
             pw.println("Content-Type: text/html");
+            pw.println("Content-Length: " + content.length());
             pw.println();
-            pw.println("<html><head><title>ERROR!</title></head><body><h1>" + message + "</h1></body></html>");
+            pw.println(content);
+            pw.flush();
         }
 
         private void handleGetRequest(String[] reqSegments, PrintWriter pw, OutputStream fileOut) throws IOException {
             if (reqSegments.length != 3) {
-                Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "400: Bad Request");
-                sendErrorResponse(pw, "400: Bad Request", "Invalid HTTP request format");
+                Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "400 Bad Request");
+                sendErrorResponse(pw, "400 Bad Request", "Invalid HTTP request format");
                 return;
             }
             String filePath = reqSegments[1];
@@ -122,6 +125,11 @@ public class HTTPServer {
                 filePath = "/ROOT";
             }
             filePath = filePath.substring(1);
+            if(filePath.contains("%20"))
+            {
+                String [] pathSeg = filePath.split("%20");
+                filePath = String.join(" ", pathSeg);
+            }
             Path path = Paths.get(filePath);
             if (Files.exists(path)) {
                 if (Files.isDirectory(path)) {
@@ -131,7 +139,7 @@ public class HTTPServer {
                 }
             } else {
                 Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "404: Not Found");
-                sendErrorResponse(pw, "404: Not Found", "File not found");
+                sendErrorResponse(pw, "404 Not Found", "File not found");
             }
             Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), Files.exists(path) ? "200 OK" : "404 Not Found");
         }
