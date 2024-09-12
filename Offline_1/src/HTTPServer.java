@@ -10,8 +10,8 @@ import java.util.logging.*;
 public class HTTPServer {
     private static final int SERVER_PORT = 5014;
     private static final String UPD_DIR = "uploaded";
-    private static final int CHUNK_SIZE = 1024;
-    private static final String ROOT_DIR = ".";
+    private static final int CHUNK_SIZE = 4096;
+    private static final String ROOT_DIR = "ROOT";
     private static final Logger logger = Logger.getLogger(HTTPServer.class.getName());
 
     public static void main(String[] args) {
@@ -26,6 +26,8 @@ public class HTTPServer {
             }
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            System.out.println("Server is shutting down...");
         }
     }
 
@@ -46,7 +48,7 @@ public class HTTPServer {
                 String requestLine = in.readLine();
 //                System.out.println(requestLine);
                 if (requestLine == null) {
-                    sendErrorResponse(out, "400 Bad Request", "Invalid HTTP request");
+                    sendErrorResponse(out, "400: Bad Request", "Invalid HTTP request");
                     return;
                 }
 
@@ -56,12 +58,12 @@ public class HTTPServer {
                 } else if (reqSegments[0].equals("UPLOAD")) {
                     handleUploadRequest(reqSegments, in);
                 } else {
-                    sendErrorResponse(out, "400 Bad Request", "Invalid HTTP request");
+                    sendErrorResponse(out, "400: Bad Request", "Invalid HTTP request");
                 }
 
-        } catch (IOException e) {
-                e.printStackTrace();
-            }
+            } catch (IOException e) {
+                    e.printStackTrace();
+                }
             finally {
                 try {
                     socket.close();
@@ -77,12 +79,15 @@ public class HTTPServer {
             out.println("HTTP/1.0 " + status);
             out.println("Content-Type: text/html");
             out.println();
-            out.println("<html><head><title>ERROR</title></head><body><h1>" + message + "</h1></body></html>");
+            out.println("<html><head><title>ERROR!</title></head><body><h1>" + message + "</h1></body></html>");
         }
 
         private void handleGetRequest(String[] reqSegments, PrintWriter out, OutputStream fileOut)
         {
-
+            if (reqSegments.length != 3) {
+                sendErrorResponse(out, "400: Bad Request", "Invalid HTTP request format");
+                return;
+            }
         }
 
         private void handleUploadRequest(String[] reqSegments, BufferedReader in)
