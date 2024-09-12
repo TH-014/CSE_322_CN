@@ -1,0 +1,56 @@
+Date: Thu Sep 12 19:44:21 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 19:44:21 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Thu Sep 12 19:44:21 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Thu Sep 12 19:44:24 BDT 2024
+Request: [GET, /ROOT/dir1, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 19:44:24 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Thu Sep 12 19:44:24 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Thu Sep 12 19:44:26 BDT 2024
+Request: [GET, /ROOT/dir1/file2.txt, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 19:44:26 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Thu Sep 12 19:44:26 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Thu Sep 12 19:44:30 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Thu Sep 12 19:44:30 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Thu Sep 12 19:44:35 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 19:44:35 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Thu Sep 12 19:44:35 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 404 Not Found
+

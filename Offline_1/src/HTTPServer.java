@@ -12,11 +12,9 @@ public class HTTPServer {
     private static final String UPD_DIR = "uploaded";
     private static final int CHUNK_SIZE = 4096;
     private static final String ROOT_DIR = "ROOT";
-//    private static final String ROOT_DIR = ".";
-    private static final Logger logger = Logger.getLogger(HTTPServer.class.getName());
+    private static final String LOG_FILE = "log.txt";;
 
     public static void main(String[] args) {
-//        setupLogger();
 
         try (ServerSocket serverSocket = new ServerSocket(SERVER_PORT)) {
             System.out.println("Server is listening on port " + SERVER_PORT);
@@ -30,6 +28,18 @@ public class HTTPServer {
             e.printStackTrace();
         } finally {
             System.out.println("Server is shutting down...");
+        }
+    }
+
+    public static class Logger {
+
+        // Synchronized method to write logs
+        public static synchronized void writeLog(String date, String request, String response) {
+            try (FileWriter writer = new FileWriter(LOG_FILE, true)) {
+                writer.write( "Date: "+date + "\nRequest: " + request + "\nResponse: " + response + "\n\n");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -64,6 +74,7 @@ public class HTTPServer {
                 String requestLine = in.readLine();
                 System.out.println(requestLine);
                 if (requestLine == null) {
+                    Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
                     sendErrorResponse(out, "400: Bad Request", "Invalid HTTP request");
                     return;
                 }
@@ -74,6 +85,7 @@ public class HTTPServer {
                 } else if (reqSegments[0].equals("UPLOAD")) {
                     handleUploadRequest(reqSegments, in);
                 } else {
+                    Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
                     sendErrorResponse(out, "400: Bad Request", "Invalid HTTP request");
                 }
 
@@ -100,6 +112,7 @@ public class HTTPServer {
 
         private void handleGetRequest(String[] reqSegments, PrintWriter out, OutputStream fileOut) throws IOException {
             if (reqSegments.length != 3) {
+                Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "400: Bad Request");
                 sendErrorResponse(out, "400: Bad Request", "Invalid HTTP request format");
                 return;
             }
@@ -108,27 +121,18 @@ public class HTTPServer {
                 filePath = "/ROOT";
             }
             filePath = filePath.substring(1);
-//            System.out.println(filePath);
-
-//            Path path = Paths.get(ROOT_DIR, filePath).normalize();
             Path path = Paths.get(filePath);
-//            System.out.println(path);
-//            System.out.println(path2);
-//            System.out.println(path.getFileName());
             if (Files.exists(path)) {
-//                System.out.println("File exists");
                 if (Files.isDirectory(path)) {
-//                    System.out.println("File is a directory");
                     sendDirectoryResponse(out, path);
                 } else {
-//                    System.out.println("File is a file");
                     sendFileResponse(out, path, fileOut);
                 }
             } else {
+                Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "404: Not Found");
                 sendErrorResponse(out, "404: Not Found", "File not found");
             }
-
-//            logger.info("Request: " + Arrays.toString(reqSegments) + " | Response: " + (Files.exists(file) ? "200 OK" : "404 Not Found"));
+            Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), Files.exists(path) ? "200 OK" : "404 Not Found");
         }
 
         private void sendFileResponse(PrintWriter out, Path file, OutputStream fileOut) throws IOException {
