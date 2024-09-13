@@ -69,7 +69,12 @@ public class Client {
                 DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
                 FileInputStream fis = new FileInputStream(path.toFile());
                 String [] parts = fileName.split("/");
-                String uploadCommand = "UPLOAD " + parts[parts.length - 1] + "\n";
+                String name = parts[parts.length - 1];
+                if(name.contains(" ")) {
+                    String [] nameParts = name.split(" ");
+                    name = String.join("_", nameParts);
+                }
+                String uploadCommand = "UPLOAD " + name + "\n";
                 dos.writeBytes(uploadCommand);
                 dos.flush();
 
