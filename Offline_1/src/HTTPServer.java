@@ -1,5 +1,6 @@
 import java.io.*;
 import java.net.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
 import java.util.*;
 import java.util.stream.*;
@@ -65,24 +66,27 @@ public class HTTPServer {
 
         @Override
         public void run() {
-            try (InputStreamReader isr = new InputStreamReader(socket.getInputStream());
+            try (InputStream is = socket.getInputStream();
+                 DataInputStream dis = new DataInputStream(is);
+//                InputStreamReader isr = new InputStreamReader(is);
                  PrintWriter pw = new PrintWriter(socket.getOutputStream(), true);
                  OutputStream fileOut = socket.getOutputStream()) {
 
-                StringBuilder request = new StringBuilder();
-                int data;
-                while ((data = isr.read()) != -1) {
-                    char character = (char) data;
-                    if (character == '\n') { // End of the request line
-                        break;
-                    }
-                    request.append(character);
-                }
-                String requestLine = request.toString();
+//                StringBuilder request = new StringBuilder();
+//                int data;
+//                while ((data = isr.read()) != -1) {
+//                    char character = (char) data;
+//                    if (character == '\n') { // End of the request line
+//                        break;
+//                    }
+//                    request.append(character);
+//                }
+//                String requestLine = request.toString();
+                String requestLine = dis.readLine();
                 System.out.println(requestLine);
                 if (requestLine == null) {
-                    Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
-                    sendErrorResponse(pw, "400 Bad Request", "Invalid HTTP request");
+//                    Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
+//                    sendErrorResponse(pw, "400 Bad Request", "Invalid HTTP request");
                     return;
                 }
 
@@ -97,7 +101,7 @@ public class HTTPServer {
                         e.printStackTrace();
                     }
                 } else if (reqSegments[0].equals("UPLOAD")) {
-                    handleUploadRequest(reqSegments, new DataInputStream(socket.getInputStream()));
+                    handleUploadRequest(reqSegments, new DataInputStream(is));
                 } else {
                     Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
                     sendErrorResponse(pw, "400 Bad Request", "Invalid HTTP request");
@@ -143,6 +147,7 @@ public class HTTPServer {
                 String [] pathSeg = filePath.split("%20");
                 filePath = String.join(" ", pathSeg);
             }
+            System.out.println("File path: " + filePath);
             Path path = Paths.get(filePath);
             if (Files.exists(path)) {
                 if (Files.isDirectory(path)) {
@@ -172,12 +177,22 @@ public class HTTPServer {
                 pw.println("Content-Disposition: attachment; filename=\"" + path.getFileName().toString() + "\"");
             }
             pw.println();
-
-            try (FileInputStream fis = new FileInputStream(path.toFile())) {
+            System.out.println("response sent, now sending file: "+path.getFileName());
+//            try (FileInputStream fis = new FileInputStream(path.toFile())) {
+//                byte[] buffer = new byte[CHUNK_SIZE];
+//                int bytesRead;
+//                while ((bytesRead = fis.read(buffer)) != -1) {
+//                    fileOut.write(buffer, 0, bytesRead);
+//                }
+//            } catch (IOException e) {
+//                e.printStackTrace();
+//            }
+            try (DataInputStream fis = new DataInputStream(new FileInputStream(path.toFile()))) {
                 byte[] buffer = new byte[CHUNK_SIZE];
                 int bytesRead;
                 while ((bytesRead = fis.read(buffer)) != -1) {
                     fileOut.write(buffer, 0, bytesRead);
+                    fileOut.flush();
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -219,11 +234,11 @@ public class HTTPServer {
             }
             File file = new File(ROOT_DIR + "/"+UPD_DIR+"/" + fileName);
 
-            try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file))) {
+            try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(file))) {
                 byte[] buffer = new byte[CHUNK_SIZE];
                 int bytesRead;
                 while ((bytesRead = dis.read(buffer)) != -1) {
-                    bos.write(buffer, 0, bytesRead);
+                    dos.write(buffer, 0, bytesRead);
                 }
             } catch (IOException e) {
                 e.printStackTrace();

@@ -83,10 +83,11 @@ public class Client {
                 int bytesRead;
                 while ((bytesRead = fis.read(buffer)) != -1) {
                     dos.write(buffer, 0, bytesRead);
+                    dos.flush();
                 }
                 fis.close();
-                dos.flush();
                 dos.close();
+//                Thread.sleep(1000);
                 socket.close();
                 System.out.println(fileName + " uploaded successfully.");
 
