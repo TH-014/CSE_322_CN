@@ -190,3 +190,283 @@ Date: Thu Sep 12 22:06:48 BDT 2024
 Request: null
 Response: 400: Bad Request
 
+Date: Thu Sep 12 22:16:03 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 22:16:05 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 22:16:07 BDT 2024
+Request: [GET, /ROOT/Screenshot%20from_2024-09-12_21-29-31.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 22:16:57 BDT 2024
+Request: [UPLOAD, Screen, shot.png]
+Response: 403: Forbidden
+
+Date: Thu Sep 12 22:17:07 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 22:17:12 BDT 2024
+Request: null
+Response: 400: Bad Request
+
+Date: Thu Sep 12 22:17:17 BDT 2024
+Request: null
+Response: 400: Bad Request
+
+Date: Thu Sep 12 22:18:00 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 22:18:07 BDT 2024
+Request: null
+Response: 400: Bad Request
+
+Date: Thu Sep 12 22:18:35 BDT 2024
+Request: [UPLOAD, Screenshot.png]
+Response: File uploaded!
+
+Date: Thu Sep 12 22:18:42 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 22:18:43 BDT 2024
+Request: [GET, /ROOT/uploaded/Screenshot.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:28:44 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:28:46 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:28:48 BDT 2024
+Request: [GET, /ROOT/Screenshot.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:29:21 BDT 2024
+Request: Screenshot.png�PNG
+Response: 400: Bad Request
+
+Date: Thu Sep 12 23:30:30 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:30:36 BDT 2024
+Request: null
+Response: 400: Bad Request
+
+Date: Thu Sep 12 23:32:21 BDT 2024
+Request: UPLOADScreenshot.png�PNG
+Response: 400: Bad Request
+
+Date: Thu Sep 12 23:35:10 BDT 2024
+Request: [UPLOAD, Screenshot.png�PNG]
+Response: 403: Forbidden
+
+Date: Thu Sep 12 23:36:18 BDT 2024
+Request: [UPLOAD, Screenshot.png�PNG]
+Response: 403: Forbidden
+
+Date: Thu Sep 12 23:39:58 BDT 2024
+Request: [UPLOAD, Screenshot.png�PNG]
+Response: 403: Forbidden
+
+Date: Thu Sep 12 23:43:47 BDT 2024
+Request: [UPLOAD, Screenshot.png]
+Response: File uploaded!
+
+Date: Thu Sep 12 23:43:55 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:43:57 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:43:58 BDT 2024
+Request: [GET, /ROOT/uploaded/Screenshot.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:44:05 BDT 2024
+Request: [GET, /ROOT/uploaded/Screenshot.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:44:16 BDT 2024
+Request: [GET, /ROOT/uploaded/Screenshot.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:48:15 BDT 2024
+Request: [UPLOAD, Screenshot1.png]
+Response: File uploaded!
+
+Date: Thu Sep 12 23:48:25 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:48:29 BDT 2024
+Request: [GET, /ROOT/uploaded/Screenshot1.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:48:39 BDT 2024
+Request: null
+Response: 400: Bad Request
+
+Date: Thu Sep 12 23:48:40 BDT 2024
+Request: [GET, /ROOT/Screenshot.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:58:48 BDT 2024
+Request: [UPLOAD, Screenshot1.png]
+Response: File uploaded!
+
+Date: Thu Sep 12 23:59:08 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:59:09 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Thu Sep 12 23:59:10 BDT 2024
+Request: [GET, /ROOT/uploaded/Screenshot1.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 00:04:23 BDT 2024
+Request: null
+Response: 400: Bad Request
+
+Date: Fri Sep 13 00:15:56 BDT 2024
+Request: [UPLOAD, Screenshot1.png]
+Response: File uploaded!
+
+Date: Fri Sep 13 00:16:12 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 00:16:14 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 00:16:16 BDT 2024
+Request: [GET, /ROOT/uploaded/Screenshot1.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 00:20:45 BDT 2024
+Request: [UPLOAD, abc.png]
+Response: File uploaded!
+
+Date: Fri Sep 13 00:20:57 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 00:20:59 BDT 2024
+Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 05:59:28 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 05:59:28 BDT 2024
+Request: [GET, /favicon.ico, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 05:59:35 BDT 2024
+Request: 
+Response: 400: Bad Request
+
+Date: Fri Sep 13 06:01:00 BDT 2024
+Request: 
+Response: 400: Bad Request
+
+Date: Fri Sep 13 06:07:35 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:07:38 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:07:40 BDT 2024
+Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:08:18 BDT 2024
+Request: [GET, /ROOT/Screenshot.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:08:22 BDT 2024
+Request: [GET, /ROOT/file1.txt, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:08:24 BDT 2024
+Request: [GET, /ROOT/dir1, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:08:25 BDT 2024
+Request: [GET, /ROOT/dir1/file2.txt, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:08:28 BDT 2024
+Request: [GET, /ROOT/dir1/dir2, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:08:29 BDT 2024
+Request: [GET, /ROOT/dir1/dir2/send.txt, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:10:05 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:10:07 BDT 2024
+Request: [GET, /ROOT/file1.txt, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:10:17 BDT 2024
+Request: [UPLOAD, abc.png]
+Response: File uploaded!
+
+Date: Fri Sep 13 06:10:29 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:10:30 BDT 2024
+Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:10:38 BDT 2024
+Request: 
+Response: 400: Bad Request
+
+Date: Fri Sep 13 06:14:46 BDT 2024
+Request: 
+Response: 400: Bad Request
+
+Date: Fri Sep 13 06:15:24 BDT 2024
+Request: [UPLOAD, vedio.mp4]
+Response: File uploaded!
+
+Date: Fri Sep 13 06:15:41 BDT 2024
+Request: 
+Response: 400: Bad Request
+
+Date: Fri Sep 13 06:15:43 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:15:45 BDT 2024
+Request: [GET, /ROOT/uploaded/vedio.mp4, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 06:15:50 BDT 2024
+Request: 
+Response: 400: Bad Request
+

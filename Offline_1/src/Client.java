@@ -60,12 +60,18 @@ public class Client {
                         return;
                     }
                 }
+                else {
+                    System.out.println("File not found.");
+                    return;
+                }
 
                 Socket socket = new Socket(SERVER_ADDRESS, SERVER_PORT);
-//                System.out.println("Connected to server");
-                PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+                DataOutputStream dos = new DataOutputStream(socket.getOutputStream());
+                FileInputStream fis = new FileInputStream(path.toFile());
                 String [] parts = fileName.split("/");
-                out.println("UPLOAD " + parts[parts.length - 1]);
+                String uploadCommand = "UPLOAD " + parts[parts.length - 1] + "\n";
+                dos.writeBytes(uploadCommand);
+                dos.flush();
 
                 if(!isAllowedFile(fileName)) {
                     System.out.println("ERROR! File type not allowed.");
@@ -73,17 +79,14 @@ public class Client {
                     return;
                 }
 
-                BufferedInputStream bis = new BufferedInputStream(new FileInputStream(path.toFile()));
-                BufferedOutputStream bos = new BufferedOutputStream(socket.getOutputStream());
-
                 byte[] buffer = new byte[CHUNK_SIZE];
                 int bytesRead;
-                while ((bytesRead = bis.read(buffer)) != -1) {
-                    bos.write(buffer, 0, bytesRead);
+                while ((bytesRead = fis.read(buffer)) != -1) {
+                    dos.write(buffer, 0, bytesRead);
                 }
-
-                bis.close();
-                bos.close();
+                fis.close();
+                dos.flush();
+                dos.close();
                 socket.close();
                 System.out.println(fileName + " uploaded successfully.");
 

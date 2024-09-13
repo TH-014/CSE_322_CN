@@ -2,10 +2,7 @@ import java.io.*;
 import java.net.*;
 import java.nio.file.*;
 import java.util.*;
-import java.util.concurrent.*;
 import java.util.stream.*;
-import java.nio.file.attribute.*;
-import java.util.logging.*;
 
 public class HTTPServer {
     private static final int SERVER_PORT = 5014;
@@ -68,11 +65,20 @@ public class HTTPServer {
 
         @Override
         public void run() {
-            try (BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+            try (InputStreamReader isr = new InputStreamReader(socket.getInputStream());
                  PrintWriter pw = new PrintWriter(socket.getOutputStream(), true);
                  OutputStream fileOut = socket.getOutputStream()) {
 
-                String requestLine = br.readLine();
+                StringBuilder request = new StringBuilder();
+                int data;
+                while ((data = isr.read()) != -1) {
+                    char character = (char) data;
+                    if (character == '\n') { // End of the request line
+                        break;
+                    }
+                    request.append(character);
+                }
+                String requestLine = request.toString();
                 System.out.println(requestLine);
                 if (requestLine == null) {
                     Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
@@ -82,9 +88,16 @@ public class HTTPServer {
 
                 String[] reqSegments = requestLine.split(" ");
                 if (reqSegments[0].equals("GET")) {
-                    handleGetRequest(reqSegments, pw, fileOut);
+                    try {
+                        handleGetRequest(reqSegments, pw, fileOut);
+                    } catch (SocketException se) {
+                        System.err.println("Client disconnected prematurely: " + se.getMessage());
+                        Logger.writeLog(new Date().toString(), requestLine, "Broken Pipe Error\nClient disconnected during file transmission");
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 } else if (reqSegments[0].equals("UPLOAD")) {
-                    handleUploadRequest(reqSegments, br);
+                    handleUploadRequest(reqSegments, new DataInputStream(socket.getInputStream()));
                 } else {
                     Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
                     sendErrorResponse(pw, "400 Bad Request", "Invalid HTTP request");
@@ -197,7 +210,7 @@ public class HTTPServer {
             out.println("</body></html>");
         }
 
-        private void handleUploadRequest(String[] reqSegments, BufferedReader br) throws FileNotFoundException {
+        private void handleUploadRequest(String[] reqSegments, DataInputStream dis) throws FileNotFoundException {
             String fileName = reqSegments[1];
             if (!isAllowedFile(fileName)) {
                 Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "403: Forbidden");
@@ -207,10 +220,10 @@ public class HTTPServer {
             File file = new File(ROOT_DIR + "/"+UPD_DIR+"/" + fileName);
 
             try (BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file))) {
-                char[] buffer = new char[CHUNK_SIZE];
+                byte[] buffer = new byte[CHUNK_SIZE];
                 int bytesRead;
-                while ((bytesRead = br.read(buffer)) != -1) {
-                    bos.write(new String(buffer, 0, bytesRead).getBytes());
+                while ((bytesRead = dis.read(buffer)) != -1) {
+                    bos.write(buffer, 0, bytesRead);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
