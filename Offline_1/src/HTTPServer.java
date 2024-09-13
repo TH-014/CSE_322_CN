@@ -8,7 +8,7 @@ import java.util.stream.*;
 public class HTTPServer {
     private static final int SERVER_PORT = 5014;
     private static final String UPD_DIR = "uploaded";
-    private static final int CHUNK_SIZE = 4096;
+    private static final int CHUNK_SIZE = 65536;
     private static final String ROOT_DIR = "ROOT";
     private static final String LOG_FILE = "log.txt";
     private static final Set<String> ALLOWED_EXTENSIONS = Set.of("txt", "jpg", "png", "mp4");
@@ -70,7 +70,8 @@ public class HTTPServer {
                  DataInputStream dis = new DataInputStream(is);
 //                InputStreamReader isr = new InputStreamReader(is);
                  PrintWriter pw = new PrintWriter(socket.getOutputStream(), true);
-                 OutputStream fileOut = socket.getOutputStream()) {
+                 OutputStream os = socket.getOutputStream();
+                 BufferedOutputStream fileout = new BufferedOutputStream(os)) {
 
 //                StringBuilder request = new StringBuilder();
 //                int data;
@@ -93,7 +94,7 @@ public class HTTPServer {
                 String[] reqSegments = requestLine.split(" ");
                 if (reqSegments[0].equals("GET")) {
                     try {
-                        handleGetRequest(reqSegments, pw, fileOut);
+                        handleGetRequest(reqSegments, pw, fileout);
                     } catch (SocketException se) {
                         System.err.println("Client disconnected prematurely: " + se.getMessage());
                         Logger.writeLog(new Date().toString(), requestLine, "Broken Pipe Error\nClient disconnected during file transmission");
@@ -131,7 +132,7 @@ public class HTTPServer {
             pw.flush();
         }
 
-        private void handleGetRequest(String[] reqSegments, PrintWriter pw, OutputStream fileOut) throws IOException {
+        private void handleGetRequest(String[] reqSegments, PrintWriter pw, BufferedOutputStream fileOut) throws IOException {
             if (reqSegments.length != 3) {
                 Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), "400 Bad Request");
                 sendErrorResponse(pw, "400 Bad Request", "Invalid HTTP request format");
@@ -162,7 +163,7 @@ public class HTTPServer {
             Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), Files.exists(path) ? "200 OK" : "404 Not Found");
         }
 
-        private void sendFileResponse(PrintWriter pw, Path path, OutputStream fileOut) throws IOException {
+        private void sendFileResponse(PrintWriter pw, Path path, BufferedOutputStream fileOut) throws IOException {
             String mimeType = Files.probeContentType(path);
             if (mimeType == null) {
                 mimeType = "application/octet-stream";
@@ -173,20 +174,12 @@ public class HTTPServer {
             pw.println("HTTP/1.0 200 OK");
             pw.println("Content-Type: " + mimeType);
             pw.println("Content-Length: " + Files.size(path));
+            System.out.println("Mime: "+mimeType+"\nContent-Length: " + Files.size(path));
             if(!mime[0].equals("image") && !mime[0].equals("text")) {
                 pw.println("Content-Disposition: attachment; filename=\"" + path.getFileName().toString() + "\"");
             }
-            pw.println();
+            pw.println(); pw.flush();
             System.out.println("response sent, now sending file: "+path.getFileName());
-//            try (FileInputStream fis = new FileInputStream(path.toFile())) {
-//                byte[] buffer = new byte[CHUNK_SIZE];
-//                int bytesRead;
-//                while ((bytesRead = fis.read(buffer)) != -1) {
-//                    fileOut.write(buffer, 0, bytesRead);
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
             try (DataInputStream fis = new DataInputStream(new FileInputStream(path.toFile()))) {
                 byte[] buffer = new byte[CHUNK_SIZE];
                 int bytesRead;
