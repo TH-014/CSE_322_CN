@@ -1,613 +1,172 @@
-Date: Fri Sep 13 07:28:37 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1
-]
+Date: Fri Sep 13 18:45:03 BDT 2024
+Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 07:28:42 BDT 2024
-Request: 
-Response: 400: Bad Request
-
-Date: Fri Sep 13 07:35:22 BDT 2024
-Request: 
-Response: 400: Bad Request
-
-Date: Fri Sep 13 07:35:23 BDT 2024
-Request: [GET, /, HTTP/1.1]
+Date: Fri Sep 13 18:45:04 BDT 2024
+Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 07:35:24 BDT 2024
-Request: [GET, /ROOT/file1.txt, HTTP/1.1]
+Date: Fri Sep 13 22:10:05 BDT 2024
+Request: [GET, /abc.png, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 07:35:28 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Date: Fri Sep 13 22:15:31 BDT 2024
+Request: [GET, /abc.png, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 07:35:29 BDT 2024
-Request: [GET, /ROOT/uploaded/file1.txt, HTTP/1.1]
+Date: Fri Sep 13 22:21:26 BDT 2024
+Request: [GET, /abc.png, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 07:35:34 BDT 2024
-Request: [GET, /ROOT/Screenshot.png, HTTP/1.1]
+Date: Fri Sep 13 22:21:49 BDT 2024
+Request: [GET, /, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 07:35:43 BDT 2024
-Request: [UPLOAD, log.txt]
+Date: Fri Sep 13 22:22:05 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 22:22:10 BDT 2024
+Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 22:22:38 BDT 2024
+Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 22:27:24 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 22:27:27 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 22:27:28 BDT 2024
+Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 22:27:28 BDT 2024
+Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 22:27:45 BDT 2024
+Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 22:52:10 BDT 2024
+Request: [GET, /abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Fri Sep 13 22:53:48 BDT 2024
+Request: [GET, /abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Wed Sep 18 11:01:10 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Wed Sep 18 11:01:13 BDT 2024
+Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Response: 200 OK
+
+Date: Wed Sep 18 11:01:15 BDT 2024
+Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Wed Sep 18 11:01:23 BDT 2024
+Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
+Response: 200 OK
+
+Date: Wed Sep 18 11:08:26 BDT 2024
+Request: [GET, /ROOT/lecture.mp4, HTTP/1.1]
+Response: 200 OK
+
+Date: Wed Sep 18 11:10:02 BDT 2024
+Request: [GET, /, HTTP/1.1]
+Response: 200 OK
+
+Date: Wed Sep 18 11:10:09 BDT 2024
+Request: [GET, /ROOT/lecture.mp4, HTTP/1.1]
+Response: 200 OK
+
+Date: Wed Sep 18 11:13:59 BDT 2024
+Request: [UPLOAD, lecture_2.mp4]
 Response: File uploaded!
 
-Date: Fri Sep 13 07:35:46 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:35:47 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:36:00 BDT 2024
-Request: 
-Response: 400: Bad Request
-
-Date: Fri Sep 13 07:41:01 BDT 2024
-Request: 
-Response: 400: Bad Request
-
-Date: Fri Sep 13 07:41:02 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:41:03 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:41:05 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:41:12 BDT 2024
-Request: [UPLOAD, log.txt]
+Date: Wed Sep 18 11:14:01 BDT 2024
+Request: [UPLOAD, lecture.mp4]
 Response: File uploaded!
 
-Date: Fri Sep 13 07:41:12 BDT 2024
-Request: 
-Response: 400: Bad Request
+Date: Wed Sep 18 11:26:41 BDT 2024
+Request: [GET, /dir, HTTP/1.1]
+Response: 404: Not Found
 
-Date: Fri Sep 13 07:41:16 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
+Date: Wed Sep 18 11:26:41 BDT 2024
+Request: [GET, /dir, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Wed Sep 18 11:26:50 BDT 2024
+Request: [GET, /dir, HTTP/1.1]
+Response: 404: Not Found
+
+Date: Wed Sep 18 11:26:50 BDT 2024
+Request: [GET, /dir, HTTP/1.1]
+Response: 404 Not Found
+
+Date: Wed Sep 18 11:27:05 BDT 2024
+Request: [GET, /, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 07:41:17 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:41:29 BDT 2024
-Request: [UPLOAD, abc.png]
-Response: File uploaded!
-
-Date: Fri Sep 13 07:41:35 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:41:36 BDT 2024
-Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:41:44 BDT 2024
-Request: 
-Response: 400: Bad Request
-
-Date: Fri Sep 13 07:42:22 BDT 2024
-Request: 
-Response: 400: Bad Request
-
-Date: Fri Sep 13 07:45:39 BDT 2024
-Request: [UPLOAD, log.txt]
-Response: File uploaded!
-
-Date: Fri Sep 13 07:45:47 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:45:47 BDT 2024
-Request: [GET, /favicon.ico, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:45:48 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:45:52 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:45:56 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:45:57 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:46:05 BDT 2024
-Request: [UPLOAD, abc.png]
-Response: File uploaded!
-
-Date: Fri Sep 13 07:46:09 BDT 2024
-Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:46:13 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 07:47:13 BDT 2024
-Request: [UPLOAD, log.txt]
-Response: File uploaded!
-
-Date: Fri Sep 13 07:47:26 BDT 2024
-Request: 
-Response: 400: Bad Request
-
-Date: Fri Sep 13 07:47:27 BDT 2024
-Request: [UPLOAD, abc.png]
-Response: File uploaded!
-
-Date: Fri Sep 13 07:48:01 BDT 2024
-Request: [UPLOAD, log.txt]
-Response: File uploaded!
-
-Date: Fri Sep 13 07:48:13 BDT 2024
-Request: [UPLOAD, abc.png]
-Response: File uploaded!
-
-Date: Fri Sep 13 07:48:22 BDT 2024
+Date: Wed Sep 18 11:32:01 BDT 2024
 Request: [UPLOAD, vedio.mp4]
 Response: File uploaded!
 
-Date: Fri Sep 13 09:11:21 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:11:32 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:11:37 BDT 2024
-Request: null
-Response: 400: Bad Request
-
-Date: Fri Sep 13 09:11:50 BDT 2024
-Request: [UPLOAD, log.txt]
+Date: Wed Sep 18 11:32:05 BDT 2024
+Request: [UPLOAD, lecture.mp4]
 Response: File uploaded!
 
-Date: Fri Sep 13 09:11:54 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:11:55 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:12:04 BDT 2024
-Request: [UPLOAD, abc.png]
-Response: File uploaded!
-
-Date: Fri Sep 13 09:12:07 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:12:09 BDT 2024
-Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:12:36 BDT 2024
+Date: Wed Sep 18 11:39:45 BDT 2024
 Request: [UPLOAD, vedio.mp4]
 Response: File uploaded!
 
-Date: Fri Sep 13 09:12:45 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:12:46 BDT 2024
-Request: [GET, /ROOT/uploaded/vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:12:52 BDT 2024
-Request: null
-Response: 400: Bad Request
-
-Date: Fri Sep 13 09:13:04 BDT 2024
-Request: null
-Response: 400: Bad Request
-
-Date: Fri Sep 13 09:13:37 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:13:38 BDT 2024
-Request: [GET, /ROOT/file1.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:13:42 BDT 2024
-Request: [GET, /ROOT/Screenshot.png, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:13:46 BDT 2024
-Request: [GET, /ROOT/short%20vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:13:51 BDT 2024
-Request: null
-Response: 400: Bad Request
-
-Date: Fri Sep 13 09:16:09 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:16:14 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:16:19 BDT 2024
-Request: null
-Response: 400: Bad Request
-
-Date: Fri Sep 13 09:16:19 BDT 2024
-Request: [GET, /ROOT/short%20vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:16:25 BDT 2024
-Request: null
-Response: 400: Bad Request
-
-Date: Fri Sep 13 09:23:16 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:23:17 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:23:19 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:23:22 BDT 2024
-Request: [GET, /ROOT/file1.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:23:25 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:23:27 BDT 2024
-Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:23:34 BDT 2024
-Request: [GET, /ROOT/uploaded/vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:23:40 BDT 2024
-Request: [GET, /ROOT/doc1.docx, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:24:15 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:24:18 BDT 2024
-Request: [GET, /ROOT/short%20vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:24:22 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:24:23 BDT 2024
-Request: [GET, /ROOT/uploaded/vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:26:27 BDT 2024
-Request: [UPLOAD, log.txt]
+Date: Wed Sep 18 11:39:53 BDT 2024
+Request: [UPLOAD, lecture.mp4]
 Response: File uploaded!
 
-Date: Fri Sep 13 09:26:30 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:26:32 BDT 2024
-Request: [GET, /ROOT/uploaded/log.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:26:41 BDT 2024
-Request: [UPLOAD, abc.png]
-Response: File uploaded!
-
-Date: Fri Sep 13 09:26:44 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:26:45 BDT 2024
-Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:27:23 BDT 2024
-Request: [UPLOAD, doc1.docx]
+Date: Wed Sep 18 11:40:15 BDT 2024
+Request: [UPLOAD, Assignment_1.pdf]
 Response: 403: Forbidden
 
-Date: Fri Sep 13 09:27:33 BDT 2024
-Request: [GET, /ROOT/doc1.docx, HTTP/1.1]
+Date: Wed Sep 18 11:40:36 BDT 2024
+Request: [GET, /, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 09:27:50 BDT 2024
-Request: [UPLOAD, vedio.mp4]
-Response: File uploaded!
-
-Date: Fri Sep 13 09:28:11 BDT 2024
+Date: Wed Sep 18 11:40:40 BDT 2024
 Request: [GET, /ROOT/uploaded, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 09:28:13 BDT 2024
+Date: Wed Sep 18 11:40:45 BDT 2024
 Request: [GET, /ROOT/uploaded/vedio.mp4, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 09:29:26 BDT 2024
+Date: Wed Sep 18 11:41:06 BDT 2024
 Request: [GET, /, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 09:29:31 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:29:36 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:29:37 BDT 2024
-Request: [GET, /ROOT/uploaded/vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:29:41 BDT 2024
-Request: [GET, /ROOT/short%20vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:40:28 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:40:33 BDT 2024
-Request: [GET, /ROOT/vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:50:22 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:50:25 BDT 2024
-Request: [GET, /ROOT/doc1.docx, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:50:29 BDT 2024
-Request: [GET, /ROOT/vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:50:32 BDT 2024
-Request: [GET, /ROOT/vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:50:36 BDT 2024
-Request: [GET, /ROOT/short%20vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:51:34 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:51:37 BDT 2024
-Request: [GET, /ROOT/doc1.docx, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:51:40 BDT 2024
-Request: [GET, /ROOT/vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:51:49 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:51:51 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:51:52 BDT 2024
-Request: [GET, /ROOT/uploaded/file1.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:56:10 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:56:11 BDT 2024
+Date: Wed Sep 18 11:41:14 BDT 2024
 Request: [GET, /ROOT/file1.txt, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 09:56:16 BDT 2024
-Request: [GET, /ROOT/doc1.docx, HTTP/1.1]
+Date: Wed Sep 18 11:41:23 BDT 2024
+Request: [GET, /ROOT/dir1, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 09:56:18 BDT 2024
+Date: Wed Sep 18 11:41:25 BDT 2024
 Request: [GET, /ROOT/uploaded, HTTP/1.1]
 Response: 200 OK
 
-Date: Fri Sep 13 09:56:24 BDT 2024
-Request: [GET, /ROOT/vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:56:41 BDT 2024
-Request: [UPLOAD, abc.png]
-Response: File uploaded!
-
-Date: Fri Sep 13 09:56:45 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:56:46 BDT 2024
+Date: Wed Sep 18 11:41:26 BDT 2024
 Request: [GET, /ROOT/uploaded/abc.png, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:57:00 BDT 2024
-Request: [UPLOAD, vedio.mp4]
-Response: File uploaded!
-
-Date: Fri Sep 13 09:57:06 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 09:57:08 BDT 2024
-Request: [GET, /ROOT/uploaded/vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:00:01 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:00:06 BDT 2024
-Request: [GET, /ROOT/short.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:00:30 BDT 2024
-Request: [UPLOAD, short.mp4]
-Response: File uploaded!
-
-Date: Fri Sep 13 10:00:34 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:00:36 BDT 2024
-Request: [GET, /ROOT/uploaded/short.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:01:45 BDT 2024
-Request: [GET, /ROOT/uploaded, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:01:48 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:01:50 BDT 2024
-Request: [GET, /ROOT/medium.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:02:08 BDT 2024
-Request: [GET, /ROOT/short%20vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:08:46 BDT 2024
-Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:10:14 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:10:16 BDT 2024
-Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:15:14 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:15:18 BDT 2024
-Request: [GET, /ROOT/file1.txt, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:15:41 BDT 2024
-Request: [GET, /ROOT/short.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:15:49 BDT 2024
-Request: [GET, /ROOT/medium.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:15:55 BDT 2024
-Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:16:31 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:16:32 BDT 2024
-Request: [GET, /ROOT/short.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:18:33 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:18:34 BDT 2024
-Request: [GET, /ROOT/short.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:19:00 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:19:02 BDT 2024
-Request: [GET, /ROOT/short.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:19:10 BDT 2024
-Request: [GET, /, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:19:12 BDT 2024
-Request: [GET, /ROOT/medium.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:19:16 BDT 2024
-Request: [GET, /ROOT/short.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:19:18 BDT 2024
-Request: [GET, /ROOT/medium.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:19:22 BDT 2024
-Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:22:07 BDT 2024
-Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:23:45 BDT 2024
-Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:24:22 BDT 2024
-Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.1]
-Response: 200 OK
-
-Date: Fri Sep 13 10:28:28 BDT 2024
-Request: [GET, /ROOT/short.mp4, HTTP/1.0]
-Response: 200 OK
-
-Date: Fri Sep 13 10:29:14 BDT 2024
-Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.0]
-Response: 200 OK
-
-Date: Fri Sep 13 10:30:17 BDT 2024
-Request: [GET, /ROOT/long_vedio.mp4, HTTP/1.0]
-Response: 200 OK
-
-Date: Fri Sep 13 10:34:47 BDT 2024
-Request: [UPLOAD, long_vedio.mp4]
-Response: File uploaded!
-
-Date: Fri Sep 13 10:35:35 BDT 2024
-Request: [GET, /ROOT/uploaded/long_vedio.mp4, HTTP/1.1]
 Response: 200 OK
 

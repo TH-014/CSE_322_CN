@@ -6,9 +6,10 @@ import java.util.*;
 import java.util.stream.*;
 
 public class HTTPServer {
+    private static final String SERVER_ADDRESS = "localhost";
     private static final int SERVER_PORT = 5014;
     private static final String UPD_DIR = "uploaded";
-    private static final int CHUNK_SIZE = 65536;
+    private static final int CHUNK_SIZE = 128;
     private static final String ROOT_DIR = "ROOT";
     private static final String LOG_FILE = "log.txt";
     private static final Set<String> ALLOWED_EXTENSIONS = Set.of("txt", "jpg", "png", "mp4");
@@ -73,21 +74,9 @@ public class HTTPServer {
                  OutputStream os = socket.getOutputStream();
                  BufferedOutputStream fileout = new BufferedOutputStream(os)) {
 
-//                StringBuilder request = new StringBuilder();
-//                int data;
-//                while ((data = isr.read()) != -1) {
-//                    char character = (char) data;
-//                    if (character == '\n') { // End of the request line
-//                        break;
-//                    }
-//                    request.append(character);
-//                }
-//                String requestLine = request.toString();
                 String requestLine = dis.readLine();
                 System.out.println(requestLine);
                 if (requestLine == null) {
-//                    Logger.writeLog(new Date().toString(), requestLine, "400: Bad Request");
-//                    sendErrorResponse(pw, "400 Bad Request", "Invalid HTTP request");
                     return;
                 }
 
@@ -163,18 +152,39 @@ public class HTTPServer {
             Logger.writeLog(new Date().toString(), Arrays.toString(reqSegments), Files.exists(path) ? "200 OK" : "404 Not Found");
         }
 
+        private static void sendImagePage(PrintWriter pw, String imagePath) {
+            String htmlResponse = "<html>\n" +
+                    "<head><title>Image Viewer</title></head>\n" +
+                    "<body>\n" +
+                    "<h1>Image Viewer</h1>\n" +
+                    "<img src=\"http://" + SERVER_ADDRESS + ":" + SERVER_PORT + "/" + imagePath + "\" alt=\"Image not found\" />\n" +
+                    "</body>\n" +
+                    "</html>";
+
+            pw.println("HTTP/1.0 200 OK");
+            pw.println("Content-Type: text/html");
+            pw.println("Content-Length: " + htmlResponse.length());
+            pw.println();
+
+            pw.println(htmlResponse);
+        }
+
         private void sendFileResponse(PrintWriter pw, Path path, BufferedOutputStream fileOut) throws IOException {
             String mimeType = Files.probeContentType(path);
             if (mimeType == null) {
                 mimeType = "application/octet-stream";
             }
             String [] mime = mimeType.split("/");
+//            if(mime[0].equals("image")) {
+//                sendImagePage(pw, path.toString());
+//                return;
+//            }
 //            System.out.println(mime[0]);
-
+//            System.out.println("PATH: "+path);
             pw.println("HTTP/1.0 200 OK");
             pw.println("Content-Type: " + mimeType);
             pw.println("Content-Length: " + Files.size(path));
-            System.out.println("Mime: "+mimeType+"\nContent-Length: " + Files.size(path));
+//            System.out.println("Mime: "+mimeType+"\nContent-Length: " + Files.size(path));
             if(!mime[0].equals("image") && !mime[0].equals("text")) {
                 pw.println("Content-Disposition: attachment; filename=\"" + path.getFileName().toString() + "\"");
             }
@@ -183,15 +193,18 @@ public class HTTPServer {
             try (DataInputStream fis = new DataInputStream(new FileInputStream(path.toFile()))) {
                 byte[] buffer = new byte[CHUNK_SIZE];
                 int bytesRead;
+                long totalByteswritten = 0;
                 while ((bytesRead = fis.read(buffer)) != -1) {
                     fileOut.write(buffer, 0, bytesRead);
                     fileOut.flush();
+                    totalByteswritten += bytesRead;
                 }
+                System.out.println("Total bytes written: "+totalByteswritten);
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
-
+        
         private void sendDirectoryResponse(PrintWriter out, Path dir) throws IOException {
             out.println("HTTP/1.0 200 OK");
             out.println("Content-Type: text/html");

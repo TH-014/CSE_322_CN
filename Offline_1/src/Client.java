@@ -10,7 +10,7 @@ import java.util.Vector;
 public class Client {
     private static final String SERVER_ADDRESS = "localhost";
     private static final int SERVER_PORT = 5014;
-    private static final int CHUNK_SIZE = 65536; // Size of chunks in bytes
+    private static final int CHUNK_SIZE = 128; // Size of chunks in bytes
     private static final Set<String> ALLOWED_EXTENSIONS = Set.of("txt", "jpg", "png", "mp4");
 
     public static void main(String[] args) {
@@ -115,3 +115,6 @@ public class Client {
         }
     }
 }
+
+//   /ROOT/vedio.mp4
+//   lecture.mp4
